@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backgrounds</title>
+  <style>
+    body {
+      background-color: floralwhite;
+      font-family: sans-serif, Helvetica;
+    }
+
+    .caja {
+      /* placekitten.com/width/height */
+      background-color: greenyellow; /* color si la imagen llegara a fallar */
+      background-image: url("http://placekitten.com/250/200");
+      background-repeat: no-repeat; /* repeat | no-repeat | repeat-x | repeat-y */
+      background-position: right center; /* ejeX ejeY | tambien acepta pixeles y porcentajes */
+      border: 1px solid limegreen;
+      width: 350px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="caja"></div>
+</body>
+</html>
