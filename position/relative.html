@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Position Relative</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: floralwhite;
+      font-family: sans-serif, Helvetica;
+    }
+
+    .container {
+      border: 2px dashed yellowgreen;
+      height: 500px;
+      margin: auto;
+      margin-top: 2rem;
+      width: 500px;
+    }
+
+    /*
+      1. no rompe el flujo html
+      2. conserva su espacio en el flujo
+      3. las coordenadas estan en relacion a su posicion inicial
+
+      NOTA: tambien se le puede dar valores negativos a top, bottom, left, right
+    */
+    .caja {
+      background-color: rgba(154, 205, 50, 0.5);
+      height: 120px;
+      font-size: 2rem;
+      line-height: 120px;
+      text-align: center;
+
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%); /* muevete en el ejeY -50% de tu altura misma */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+    <div class="caja">1</div>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+  </div>
+</body>
+</html>
