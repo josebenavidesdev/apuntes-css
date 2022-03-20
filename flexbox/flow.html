@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Controlar el flujo</title>
+  <style type="text/css">
+    /*
+      flex-flow: flex-direction flex-wrap;
+    */
+
+    * {
+      border: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: floralwhite;
+      color: #222;
+      font-family: sans-serif, Helvetica;
+    }
+
+    .container {
+      background-color: #F0FFC2;
+      display: flex;
+      height: 500px;
+      justify-content: space-between;
+
+      /* nowrap(default) | wrap | wrap-reverse */
+      flex-wrap: wrap; /* si no hay espacio los flex-item saltan a la siguiente linea */
+
+      /* align-content: flex-start | flex-end | center | space-between | space-around | stretch; */
+      /* para multi-lines */
+      align-content: flex-start;
+    }
+
+    .item {
+      background-color: #FFBBBB;
+      flex: 0 1 23%;
+      height: 100px;
+      margin-bottom: 1rem;
+      line-height: 100px;
+      text-align: center;
+    }
+
+    .item:nth-child(even) {
+      background-color: #FFE4C0;
+    }
+
+    .item:nth-child(5) {
+      background-color: #BFFFF0;
+      /* todos los items de manera predeterminada tienen order 0 */
+      /* -1 apareceria primero */
+      order: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+</body>
+</html>

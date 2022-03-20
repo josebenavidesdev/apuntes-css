@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flex Sizing</title>
+  <style type="text/css">
+    /*
+      cross-size:
+      1. se ha definido el tamaño
+      2. no se ha definido el tamaño y no se ha definido align-items o align-content
+      3. no se define un tamaño pero si se define align-items o align-content diferente de stretch
+
+      main-size:
+      1. espacio disponible, espacio ocupado, los margenes tambien se consideran espacio ocupado
+      2. los margenes nunca se colapsan
+      3. el espacio disponible podria ser negativo
+
+      flex-basis(relativo al eje principal): de manera predeterminada es el width, si se cambia
+      el flex-direction a column flex-basis seria el height, flex-basis predomina sobre width y height
+
+      flex-basis: auto; solo ocupa el ancho o el alto de su contenido
+
+      CALCULAR el UNIT-GROW(factor de crecimiento)
+      Espacio disponible: 100px
+      Suma de flex-grow: 1 + 1 + 1 + 2 = 5
+      Unit grow: 100px/5 = 20px
+
+      CALCULAR el UNIT-SHRINK(factor de encogimiento)
+      1. por defecto los flex-items tienen flex-shrink 1
+      Espacio disponible: 500px(espacio del flex-container) - 800px(suma de flex-items) = -300px
+      suma de flex-shrink: 5
+      Unit shrink: -300px / 5 = -60px
+
+      SHORHANT
+      flex: flex-grow flex-shrink flex-basis;
+      flex: 0 1 auto; valor predeterminado
+      flex: none; 0 0 auto
+      flex: auto; 1 1 auto
+      flex: N; N 0 0
+    */
+
+    * {
+      border: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: floralwhite;
+      color: #222;
+      font-family: sans-serif, Helvetica;
+    }
+
+    .container {
+      background-color: #F0FFC2;
+      height: 500px;
+      margin: 3rem auto;
+      width: 500px;
+
+      display: flex;
+    }
+
+    .item {
+      background-color: #FFBBBB;
+      flex-basis: 200px;
+      flex-shrink: 1;
+
+      font-size: 1.25rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .item:nth-child(even) { /* pares */
+      background-color: #FFE4C0;
+    }
+
+    .item:nth-child(2) {
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+</body>
+</html>
