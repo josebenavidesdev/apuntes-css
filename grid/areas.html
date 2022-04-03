@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grid Areas</title>
+  <!--
+  -->
+  <style type="text/css">
+    * {
+      border: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: floralwhite;
+      color: #333;
+      font-family: sans-serif, Helvetica;
+    }
+
+    .container {
+      background-color: #FDD7AA;
+      font-size: 1.5rem;
+      margin: 3rem auto;
+      max-width: 1024px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 120px 400px 100px;
+      grid-template-areas:
+        "header     header  header"
+        "sidebar-1  main    sidebar-2"
+        "footer     footer  footer";
+    }
+
+    .container > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .header {
+      background-color: #D0EDC2;
+      grid-area: header;
+    }
+
+    .main {
+      background-color: #FFA8A8;
+      grid-area: main;
+    }
+
+    .sidebar-1 {
+      background-color: #F6FFA4;
+      grid-area: sidebar-1;
+    }
+
+    .sidebar-2 {
+      background-color: #F6FFA4;
+      grid-area: sidebar-2;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">header</header>
+    <main class="main">main</main>
+    <aside class="sidebar-1">sidebar 1</aside>
+    <aside class="sidebar-2">sidebar 2</aside>
+    <footer class="footer">footer</footer>
+  </div>
+</body>
+</html>
