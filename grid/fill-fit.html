@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Fill y Fit</title>
+  <style type="text/css">
+    * {
+      border: 0;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: floralwhite;
+      color: #333;
+      font-family: sans-serif, Helvetica;
+    }
+
+    .container {
+      background-color: #FDD7AA;
+      font-size: 1.5rem;
+      margin: 3rem auto;
+      max-width: 720px;
+
+      display: grid;
+      grid-gap: 0.5rem;
+
+      /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
+      /*
+        auto-fill rellena con todas las columnas que puedan caber
+        auto-fit rellena todo el espacio con las columnas que tengas
+      */
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    .cell {
+      background-color: #FFA8A8;
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cell">1</div>
+    <div class="cell">2</div>
+    <div class="cell">3</div>
+    <div class="cell">4</div>
+  </div>
+</body>
+</html>
